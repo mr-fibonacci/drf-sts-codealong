@@ -4,6 +4,10 @@ from django.db.models.signals import post_save
 
 
 class Profile(models.Model):
+    """
+    Our profile model. It's created every time a user is created,
+    with the help of signals.
+    """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
