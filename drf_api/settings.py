@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'profiles',
     'posts',
+    'comments',
 ]
 
 CLOUDINARY_STORAGE = {
