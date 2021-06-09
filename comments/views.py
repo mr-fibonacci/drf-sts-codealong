@@ -17,10 +17,11 @@ class CommentList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
-    def get_serializer_context(self):
-        context = super(CommentList, self).get_serializer_context()
-        context.update({'request': self.request})
-        return context
+# IN GENERICS, REQUEST PASSED IN BY DEFAULT AS PART OF CONTEXT
+    # def get_serializer_context(self):
+    #     context = super(CommentList, self).get_serializer_context()
+    #     context.update({'request': self.request})
+    #     return context
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -32,7 +33,8 @@ class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CommentDetailSerializer
     queryset = Comment.objects.all()
 
-    def get_serializer_context(self):
-        context = super(CommentDetail, self).get_serializer_context()
-        context.update({'request': self.request})
-        return context
+# IN GENERICS, REQUEST PASSED IN BY DEFAULT AS PART OF CONTEXT
+    # def get_serializer_context(self):
+    #     context = super(CommentDetail, self).get_serializer_context()
+    #     context.update({'request': self.request})
+    #     return context
