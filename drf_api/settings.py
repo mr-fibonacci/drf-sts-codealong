@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'posts',
     'comments',
     'likes',
+    'followers',
 ]
 
 CLOUDINARY_STORAGE = {
